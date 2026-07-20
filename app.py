@@ -3,7 +3,7 @@ import os
 from flask import Flask
 
 from config import config
-from routes import register_routes
+from routes.main import register_routes
 
 
 def create_app(config_name=None):
