@@ -1,15 +1,15 @@
 # IT401 Project Template
 
-A Flask project template with a clean separation of concerns: services and models
-are kept in their own directories so the codebase stays organized as it grows.
-Routes are defined directly on the app in `app.py` to keep things simple.
+A Flask project template with a clean separation of concerns: routes, services, and models
+are kept in their own files/directories so the codebase stays organized as it grows.
 
 ## Project Structure
 
 ```
 project/
-├── app.py                 # App factory, entry point, and routes
+├── app.py                 # App factory, entry point
 ├── config.py               # Environment-based configuration
+├── routes/                  # View functions
 ├── requirements.txt
 ├── services/                # Business logic and external integrations
 │   ├── api_service.py       # Generic outbound HTTP client

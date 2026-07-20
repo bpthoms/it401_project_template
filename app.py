@@ -1,8 +1,9 @@
 import os
 
-from flask import Flask, render_template
+from flask import Flask
 
 from config import config
+from routes import register_routes
 
 
 def create_app(config_name=None):
@@ -11,9 +12,7 @@ def create_app(config_name=None):
     app = Flask(__name__)
     app.config.from_object(config[config_name])
 
-    @app.route("/")
-    def index():
-        return render_template("index.html")
+    register_routes(app)
 
     return app
 
