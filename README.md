@@ -1,16 +1,16 @@
 # IT401 Project Template
 
-A Flask project template with a clean separation of concerns: routes, services, and models
+A Flask project template with a clean separation of concerns: services and models
 are kept in their own directories so the codebase stays organized as it grows.
+Routes are defined directly on the app in `app.py` to keep things simple.
 
 ## Project Structure
 
 ```
 project/
-├── app.py                 # App factory, entry point
+├── app.py                 # App factory, entry point, and routes
 ├── config.py               # Environment-based configuration
 ├── requirements.txt
-├── routes/                 # Blueprints / view functions
 ├── services/                # Business logic and external integrations
 │   ├── api_service.py       # Generic outbound HTTP client
 │   ├── search_service.py    # Search logic
@@ -22,16 +22,33 @@ project/
 └── tests/                      # Test suite
 ```
 
+## Prerequisites
+
+- Python 3.10+
+- Git
+
 ## Setup
 
-1. Create and activate a virtual environment:
+1. Clone the repository:
+
+   ```bash
+   git clone <repository-url>
+   cd project
+   ```
+
+2. Create and activate a virtual environment:
 
    ```bash
    python3 -m venv .venv
+
+   # macOS / Linux
    source .venv/bin/activate
+
+   # Windows (Command Prompt / PowerShell)
+   .venv\Scripts\activate
    ```
 
-2. Install dependencies:
+3. Install dependencies:
 
    ```bash
    pip install -r requirements.txt
@@ -39,8 +56,9 @@ project/
 
 ## Running the App
 
+With the virtual environment activated:
+
 ```bash
-source .venv/bin/activate
 python app.py
 ```
 
@@ -61,7 +79,8 @@ Configuration lives in `config.py` and reads from environment variables:
 
 ## Testing
 
+With the virtual environment activated:
+
 ```bash
-source .venv/bin/activate
 python -m pytest tests/
 ```
